@@ -1,0 +1,24 @@
+{
+  "name": "therapisttrack-db",
+  "version": "1.0.0",
+  "main": "design.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TherapistTrack/TherapistTrack-DB.git"
+  },
+  "author": "Therapisttrack",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TherapistTrack/TherapistTrack-DB/issues"
+  },
+  "homepage": "https://github.com/TherapistTrack/TherapistTrack-DB#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "husky": "^9.0.11"
+  }
+}
