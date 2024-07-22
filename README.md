@@ -1,7 +1,7 @@
 <h1 align="center">📦 Therapist Track</h1>
 <h3 align="center"> Database </h3>
 
-The App uses Mongo DB as database. Following is the squema design and relation between documents. But first some notation convantions:
+The App uses Mongo DB as database. Following is the squema design and relation between documents. But first some notation conventions:
 
 ## Environment variables
 
