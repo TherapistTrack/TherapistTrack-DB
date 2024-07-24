@@ -31,7 +31,9 @@ jobs:
               with:
                 context: .
                 file: Dockerfile
-                platform: linux/amd64,linux/arm64,linux/arm64/v8
+                platforms: linux/amd64,linux/arm64,linux/arm64/v8
                 push: true
-                tags: therapisttrackapp/tt-db-dev:latest
+                tags: 
+                  therapisttrackapp/tt-db-dev:latest
+                  therapisttrackapp/tt-db-dev:${{ github.sha }}
     
