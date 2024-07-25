@@ -122,8 +122,9 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 
 ```javascript
 {
-    lastUpdated: "2023-1-2"
+    lastUpdated: "2023-1-2",
     categories: ["test", "sessions", "legal Documents"],
+    name: "Plantilla2024",
     metadata: [
         {
             name: "Difficulty",
@@ -180,7 +181,8 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 
 ```javascript
 {
-  lastUpdated: '2023-1-2'
+  lastUpdated: '2023-1-2',
+    name: "Plantilla2024"
   fields: [
     {
       name: 'Children',
