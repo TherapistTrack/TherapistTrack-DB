@@ -44,6 +44,7 @@ entity Record {
 
 entity PatientTemplate {
     * lastUpdate: date
+    * name: string
     * fields: array[object]
     [
         \t•name: string
@@ -71,6 +72,7 @@ entity Patient {
 
 entity FileTemplate {
     * lastUpdate: date
+    * name: string
     * categories: array[string]
     * metadata: array[object]
     [

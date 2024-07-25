@@ -19,6 +19,10 @@ db.runCommand({
           bsonType: 'date',
           description: 'Last time the doctor updated the template'
         },
+        name: {
+          bsonType: 'string',
+          description: 'Template name'
+        },
         metadata: {
           bsonType: 'array',
           description: 'Fields that a patient most have.',
