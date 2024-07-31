@@ -25,8 +25,6 @@ entity Doctor {
     * user: <<User>>
     * collegiateNumber
     * specialty
-    * patientTemplate: <<PatientTemplate>>
-    * fileTemplate: <<FileTemplate>>
 }
 
 entity Assistant {
@@ -37,12 +35,25 @@ entity Assistant {
 }
 
 entity Record {
-    * patient : <<Patient>>
     * doctor : <<Doctor>>
+    * template: <<PatientTemplate>> 
     * createdAt : date
+    * patient : Object
+    \t* names : string
+    \t* lastNames : string
+    \t* fields : array[object]
+    \t[
+        \t\t•name: string
+        \t\t•type: category
+        \t\t options: array[string]
+        \t\t•value: location
+        \t\t•required: pages
+    \t]
+    
 }
 
 entity PatientTemplate {
+    * doctor : <<Doctor>>
     * lastUpdate: date
     * name: string
     * fields: array[object]
@@ -55,22 +66,8 @@ entity PatientTemplate {
     ]
 }
 
-entity Patient {
-    * record : <<Record>>
-    * names : string
-    * lastNames : string
-    * fields : array[object]
-    [
-        \t•name: string
-        \t•type: category
-        \t options: array[string]
-        \t•value: location
-        \t•required: pages
-    ]
-    
-}
-
 entity FileTemplate {
+    * doctor : <<Doctor>>
     * lastUpdate: date
     * name: string
     * categories: array[string]
@@ -86,6 +83,7 @@ entity FileTemplate {
 
 entity File {
     * record : <<Record>>
+    * template: <<FileTemplate>> 
     * name : string
     * category : string
     * location : string
@@ -105,11 +103,10 @@ User -l- Rol : > has a
 User -d- Doctor : < is a
 User -d- Assistant : < is a
 
-Record -u- Doctor : < owns
+Record -u- Doctor : < owns many
 Record -- File  : < references
-Record -- Patient : < references
 
-Doctor -- FileTemplate : > owns a 
-Doctor -- PatientTemplate : > owns a
+Doctor -- FileTemplate : > owns many 
+Doctor -- PatientTemplate : > owns many
 
 @enduml

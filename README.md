@@ -92,8 +92,6 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
     user: ObjectId("dsafsdaf"),
     collegiateNumber: "41234",
     specialty: "family",
-    patientTemplate: ObjectId(),
-    fileTemplate: ObjectId()
 }
 ```
 
@@ -112,9 +110,28 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 
 ```javascript
 {
-    patient: ObjectId("32kljv093l..ad"),
     doctor: ObjectId("dk32lv..32//asd"),
+    template : ObjectId("asdfwk32?932l")
     createdAt: "2023-1-2"
+    patient : {
+        names: "Shinji",
+        lastNames: "Sakamoto",
+        fields: [
+            {
+                name: "Children",
+                type: "NUMBER",
+                value : 3,
+                required: false,
+            },
+            {
+                name: "civil status",
+                type: "CHOICE",
+                options: ["single", "married", "separate"],
+                value : "single",
+                required: true,
+            },
+        ]
+    }
 }
 ```
 
@@ -122,6 +139,7 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 
 ```javascript
 {
+    doctor : ObjectId("asdfwk32?932l")
     lastUpdated: "2023-1-2",
     categories: ["test", "sessions", "legal Documents"],
     name: "Plantilla2024",
@@ -181,46 +199,22 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 
 ```javascript
 {
-  lastUpdated: '2023-1-2',
+    doctor : ObjectId("asdfwk32?932l")
+    lastUpdated: '2023-1-2',
     name: "Plantilla2024"
-  fields: [
+    fields: [
     {
-      name: 'Children',
-      type: 'NUMBER',
-      required: false,
-      description: 'Number of children the Patient has'
+        name: 'Children',
+        type: 'NUMBER',
+        required: false,
+        description: 'Number of children the Patient has'
     },
     {
-      name: 'civil status',
-      type: 'CHOICE',
-      options: ['single', 'married', 'separate'],
-      required: true
+        name: 'civil status',
+        type: 'CHOICE',
+        options: ['single', 'married', 'separate'],
+        required: true
     }
   ]
-}
-```
-
-### Patient
-
-```javascript
-{
-    record: ObjectId("dfasdf"),
-    names: "Shinji",
-    lastNames: "Sakamoto",
-    fields: [
-        {
-            name: "Children",
-            type: "NUMBER",
-            value : 3,
-            required: false,
-        },
-        {
-            name: "civil status",
-            type: "CHOICE",
-            options: ["single", "married", "separate"],
-            value : "single",
-            required: true,
-        },
-    ]
 }
 ```
