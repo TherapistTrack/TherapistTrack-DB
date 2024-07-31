@@ -1,36 +1,38 @@
 db = db.getSiblingDB(process.env.DB_NAME)
 
-db.createCollection('Patient')
+db.createCollection('FileTemplate')
 
 db.runCommand({
-  collMod: 'Patient',
+  collMod: 'FileTemplate',
   validator: {
     $jsonSchema: {
       bsonType: 'object',
-      required: ['record', 'names', 'lastNames', 'fields'],
+      required: ['doctor','categories', 'lastUpdate', 'metadata'],
       properties: {
-        record: {
+        doctor: {
           bsonType: 'objectId',
-          description: 'Reference to the record this file belongs to'
+          description: 'Doctor that owns the template'
         },
-        names: {
-          bsonType: 'string',
-          description: "Patient's names"
-        },
-        lastNames: {
-          bsonType: 'string',
-          description: "Patient's lastNames"
-        },
-        lastUpdated: {
-          bsonType: 'date',
-          description: 'Last time the data of this patient was updated'
-        },
-        fields: {
+        categories: {
           bsonType: 'array',
-          description: 'Collection of fields, of a patient.',
+          items: {
+            bsonType: 'string'
+          }
+        },
+        lastUpdate: {
+          bsonType: 'date',
+          description: 'Last time the doctor updated the template'
+        },
+        name: {
+          bsonType: 'string',
+          description: 'Template name'
+        },
+        metadata: {
+          bsonType: 'array',
+          description: 'Fields that a patient most have.',
           items: {
             bsonType: 'object',
-            required: ['name', 'type', 'value', 'required'],
+            required: ['name', 'type', 'required'],
             properties: {
               name: {
                 bsonType: 'string',
@@ -49,7 +51,6 @@ db.runCommand({
                 description:
                   'Type of data that will be stored on this property (string, date...)'
               },
-              // OPTIONAL
               options: {
                 bsonType: 'array',
                 description:
@@ -58,10 +59,12 @@ db.runCommand({
                   bsonType: 'string'
                 }
               },
-              value: {},
               required: {
                 bsonType: 'bool',
                 description: 'Orders if this field is required or not'
+              },
+              description: {
+                bsonType: 'string'
               }
             }
           }

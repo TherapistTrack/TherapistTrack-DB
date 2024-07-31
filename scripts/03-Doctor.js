@@ -26,15 +26,6 @@ db.runCommand({
         specialty: {
           bsonType: 'string'
         },
-        patientTemplate: {
-          bsonType: 'objectId',
-          description:
-            'Reference to the template of fileds a Patient should have'
-        },
-        fileTemplate: {
-          bsonType: 'objectId',
-          description: 'Reference to the template of fileds a file should have'
-        }
       }
     }
   },

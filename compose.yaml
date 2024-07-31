@@ -2,7 +2,7 @@ name: therapist-track
 
 services:
   database: 
-    image: mongo
+    build: .
     ports:
       - "${DB_PORT}:27017"
     environment:
