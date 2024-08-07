@@ -9,6 +9,7 @@ db.runCommand({
       bsonType: 'object',
       required: [
         'record',
+        'template',
         'name',
         'category',
         'location',
@@ -20,6 +21,10 @@ db.runCommand({
         record: {
           bsonType: 'objectId',
           description: 'Reference to the record this file belongs to'
+        },
+        template: {
+          bsonType: 'objectId',
+          description: 'Reference the template this file follows'
         },
         name: {
           bsonType: 'string',

@@ -172,6 +172,7 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 ```javascript
 {
     record: ObjectId("dfasdf"),
+    template: ObjectId("df23;ldf")
     name: "test1",
     category: "test",
     location: "./route/to/file/in/disk.pdf",
