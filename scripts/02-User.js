@@ -8,9 +8,6 @@ db.runCommand({
     $jsonSchema: {
       bsonType: 'object',
       required: [
-        'username',
-        'password',
-        'salt',
         'names',
         'lastNames',
         'phones',
@@ -18,15 +15,6 @@ db.runCommand({
         'roleDependentInfo'
       ],
       properties: {
-        username: {
-          bsonType: 'string'
-        },
-        password: {
-          bsonType: 'string'
-        },
-        salt: {
-          bsonType: 'string'
-        },
         names: {
           bsonType: 'string',
           description: 'User names'
@@ -50,7 +38,7 @@ db.runCommand({
           }
         },
         rol: {
-          bsonType: 'objectId',
+          bsonType: 'string',
           description: "User's Rol on app"
         },
         roleDependentInfo: {

@@ -47,40 +47,18 @@ DB_PORT=27017
 
 Below is a a list of examples of the JSON that is expected to be stored in each collection
 
-### Rol
-
-```javascript
-{
-    _id : ObjectId("1111"),
-    name: "Admin",
-    permissions: [
-        {
-            collection: "Record"
-            operations :["CREATE", "READ","UPDATE", "DELETE"]
-        },
-        {
-            collection: "File"
-            operations :["CREATE", "DELETE"]
-        }
-    ]
-}
-```
-
 ### User
 
 ```javascript
 {
-    _id : ObjectId("1234")
-    username: "Drayo",
-    password: "kdfd8943#3adsf/v..asdf3", // Encripted
-    salt : "SDFk3k3lsdfv", // Encripted
+    _id : ObjectId("1234") // Sames as Auth0
     names: "Johan Rodrigo",
     lastNames: "Rodriguez Rando",
     mails: ["email1@gmail.com", "hotmail2@hotmail.com"],
     phones: ["32232334", "44442222"],
     rol: ObjectId("dfd32cak32..54?123/")
     // Reference to the _id Rol of Document.
-    roleDependentInfo: ObjectId("asdfsv32;lk")
+    roleDependentInfo: "Doctor"
     // Reference to the _id of a Doctor or Assistant Document.
 }
 ```

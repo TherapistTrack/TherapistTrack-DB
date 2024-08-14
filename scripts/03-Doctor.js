@@ -11,8 +11,6 @@ db.runCommand({
         'user',
         'collegiateNumber',
         'specialty',
-        'patientTemplate',
-        'fileTemplate'
       ],
       properties: {
         user: {

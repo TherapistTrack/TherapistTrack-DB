@@ -1,23 +1,11 @@
 @startuml entity
 
-entity Rol {
-    * name : string
-    * permissions : array[object]
-    [
-        \t•collection: string,
-        \t•operations: array[string],
-    ]
-}
-
 entity User {
-    * username : string
-    * password : string
-    * salt : string
     * names : string
     * lastNames : string
     * mails : array[string]
     * phones : array[string]
-    * rol : <<Rol>>
+    * rol : string
     * roleDependentInfo : <<Doctor||Assistant>>
 }
 
@@ -99,7 +87,6 @@ entity File {
     ]
 }
 
-User -l- Rol : > has a
 User -d- Doctor : < is a
 User -d- Assistant : < is a
 
