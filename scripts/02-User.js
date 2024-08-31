@@ -10,6 +10,7 @@ db.runCommand({
       required: [
         'names',
         'lastNames',
+        'mails',
         'phones',
         'rol',
       ],
