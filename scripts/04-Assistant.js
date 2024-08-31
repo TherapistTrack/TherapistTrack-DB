@@ -7,7 +7,7 @@ db.runCommand({
   validator: {
     $jsonSchema: {
       bsonType: 'object',
-      required: ['user', 'startDate', 'endDate', 'DPI'],
+      required: ['user', 'startDate', 'DPI'],
       properties: {
         user: {
           bsonType: 'objectId',
