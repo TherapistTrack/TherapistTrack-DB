@@ -10,9 +10,9 @@ db.runCommand({
       required: [
         'names',
         'lastNames',
+        'mails',
         'phones',
         'rol',
-        'roleDependentInfo'
       ],
       properties: {
         names: {
@@ -40,10 +40,6 @@ db.runCommand({
         rol: {
           bsonType: 'string',
           description: "User's Rol on app"
-        },
-        roleDependentInfo: {
-          bsonType: 'objectId',
-          description: "Reference to user's info dependent of the role"
         }
       }
     }
