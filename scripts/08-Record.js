@@ -11,11 +11,11 @@ db.runCommand({
       properties: {
         doctor: {
           bsonType: 'objectId',
-          description: 'must be a string and is required'
+          description: 'Reference to the doctor this record belongs to'
         },
         template: {
           bsonType: 'objectId',
-          description: 'The patient template this record follows'
+          description: 'Reference the template this record follows'
         },
         createdAt: {
           bsonType: 'date',
