@@ -56,10 +56,8 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
     lastNames: "Rodriguez Rando",
     mails: ["email1@gmail.com", "hotmail2@hotmail.com"],
     phones: ["32232334", "44442222"],
-    rol: ObjectId("dfd32cak32..54?123/")
-    // Reference to the _id Rol of Document.
-    roleDependentInfo: "Doctor"
-    // Reference to the _id of a Doctor or Assistant Document.
+    rol: ObjectId("dfd32cak32..54?123/"),
+    isActive: true
 }
 ```
 
@@ -119,7 +117,6 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 {
     doctor : ObjectId("asdfwk32?932l")
     lastUpdated: "2023-1-2",
-    categories: ["test", "sessions", "legal Documents"],
     name: "Plantilla2024",
     metadata: [
         {
@@ -152,7 +149,7 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
     record: ObjectId("dfasdf"),
     template: ObjectId("df23;ldf")
     name: "test1",
-    category: "test",
+    category: "test", // corresponding to the PatientTemplate categories field.
     location: "./route/to/file/in/disk.pdf",
     pages: 3
     created_at: "2023-1-2"
@@ -180,7 +177,8 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
 {
     doctor : ObjectId("asdfwk32?932l")
     lastUpdated: '2023-1-2',
-    name: "Plantilla2024"
+    name: "Plantilla2024",
+    categories: ["test", "sessions", "legal Documents"],
     fields: [
     {
         name: 'Children',
