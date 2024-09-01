@@ -13,6 +13,7 @@ db.runCommand({
         'mails',
         'phones',
         'rol',
+        'isActive'
       ],
       properties: {
         names: {
@@ -40,6 +41,10 @@ db.runCommand({
         rol: {
           bsonType: 'string',
           description: "User's Rol on app"
+        },
+        isActive: {
+          bsonType: 'boolean',
+          description: "Is the user still usable?"
         }
       }
     }
