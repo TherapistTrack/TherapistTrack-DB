@@ -43,7 +43,7 @@ db.runCommand({
           description: "User's Rol on app"
         },
         isActive: {
-          bsonType: 'boolean',
+          bsonType: 'bool',
           description: "Is the user still usable?"
         }
       }
