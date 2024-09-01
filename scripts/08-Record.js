@@ -23,7 +23,7 @@ db.runCommand({
         },
         patient : {
           bsonType: 'object',
-          required: ['record', 'names', 'lastNames', 'fields'],
+          required: ['names', 'lastNames', 'fields'],
           properties: {
             names: {
               bsonType: 'string',
@@ -32,10 +32,6 @@ db.runCommand({
             lastNames: {
               bsonType: 'string',
               description: "Patient's lastNames"
-            },
-            lastUpdated: {
-              bsonType: 'date',
-              description: 'Last time the data of this patient was updated'
             },
             fields: {
               bsonType: 'array',
