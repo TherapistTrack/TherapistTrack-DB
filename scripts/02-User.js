@@ -42,7 +42,7 @@ db.runCommand({
           bsonType: 'string',
           description: "User's Rol on app"
         },
-        rolDependentInfo : {
+        roleDependentInfo : {
           bsonType: 'objectId',
           description: 'id of rol data info'
         },

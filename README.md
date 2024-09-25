@@ -57,7 +57,7 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
     mails: ["email1@gmail.com", "hotmail2@hotmail.com"],
     phones: ["32232334", "44442222"],
     rol: "Doctor",
-    rolDependentInfo: ObjectId("dfd32cak32..54?123/"),
+    roleDependentInfo: ObjectId("dfd32cak32..54?123/"),
     isActive: true
 }
 ```
