@@ -6,6 +6,7 @@ entity User {
     * mails : array[string]
     * phones : array[string]
     * rol : string
+    * rolDependentInfo : <<Doctor|Assistant>>
     * isActive : bool
 }
 
@@ -16,6 +17,7 @@ entity Doctor {
 }
 
 entity Assistant {
+    * user: <<User>>
     * startDate: date
     * endDate: date
     * DPI: string

@@ -42,6 +42,10 @@ db.runCommand({
           bsonType: 'string',
           description: "User's Rol on app"
         },
+        rolDependentInfo : {
+          bsonType: 'objectId',
+          description: 'id of rol data info'
+        },
         isActive: {
           bsonType: 'bool',
           description: "Is the user still usable?"
