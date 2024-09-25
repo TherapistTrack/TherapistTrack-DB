@@ -6,7 +6,7 @@ entity User {
     * mails : array[string]
     * phones : array[string]
     * rol : string
-    * rolDependentInfo : <<Doctor|Assistant>>
+    * roleDependentInfo : <<Doctor|Assistant>>
     * isActive : bool
 }
 
