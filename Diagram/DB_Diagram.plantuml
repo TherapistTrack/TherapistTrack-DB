@@ -6,13 +6,14 @@ entity User {
     * mails : array[string]
     * phones : array[string]
     * rol : string
-    * roleDependentInfo : <<Doctor||Assistant>>
+    * rolDependentInfo : <<Doctor|Assistant>>
+    * isActive : bool
 }
 
 entity Doctor {
     * user: <<User>>
-    * collegiateNumber
-    * specialty
+    * collegiateNumber : string
+    * specialty : string
 }
 
 entity Assistant {
@@ -44,6 +45,7 @@ entity PatientTemplate {
     * doctor : <<Doctor>>
     * lastUpdate: date
     * name: string
+    * categories: array[string]
     * fields: array[object]
     [
         \t•name: string
@@ -58,7 +60,6 @@ entity FileTemplate {
     * doctor : <<Doctor>>
     * lastUpdate: date
     * name: string
-    * categories: array[string]
     * metadata: array[object]
     [
         \t•name: string

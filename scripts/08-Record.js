@@ -11,7 +11,11 @@ db.runCommand({
       properties: {
         doctor: {
           bsonType: 'objectId',
-          description: 'must be a string and is required'
+          description: 'Reference to the doctor this record belongs to'
+        },
+        template: {
+          bsonType: 'objectId',
+          description: 'Reference the template this record follows'
         },
         createdAt: {
           bsonType: 'date',
@@ -19,32 +23,22 @@ db.runCommand({
         },
         patient : {
           bsonType: 'object',
-          required: ['doctor', 'categories', 'name', 'lastUpdate', 'metadata'],
+          required: ['names', 'lastNames', 'fields'],
           properties: {
-            doctor: {
-              bsonType: 'objectId',
-              description: 'Doctor that owns the template'
-            },
-            categories: {
-              bsonType: 'array',
-              items: {
-                bsonType: 'string'
-              }
-            },
-            lastUpdate: {
-              bsonType: 'date',
-              description: 'Last time the doctor updated the template'
-            },
-            name: {
+            names: {
               bsonType: 'string',
-              description: 'Template name'
+              description: "Patient's names"
             },
-            metadata: {
+            lastNames: {
+              bsonType: 'string',
+              description: "Patient's lastNames"
+            },
+            fields: {
               bsonType: 'array',
-              description: 'Fields that a patient most have.',
+              description: 'Collection of fields, of a patient.',
               items: {
                 bsonType: 'object',
-                required: ['name', 'type', 'required'],
+                required: ['name', 'type', 'value', 'required'],
                 properties: {
                   name: {
                     bsonType: 'string',
@@ -63,6 +57,7 @@ db.runCommand({
                     description:
                       'Type of data that will be stored on this property (string, date...)'
                   },
+                  // OPTIONAL
                   options: {
                     bsonType: 'array',
                     description:
@@ -71,12 +66,10 @@ db.runCommand({
                       bsonType: 'string'
                     }
                   },
+                  value: {},
                   required: {
                     bsonType: 'bool',
                     description: 'Orders if this field is required or not'
-                  },
-                  description: {
-                    bsonType: 'string'
                   }
                 }
               }

@@ -9,6 +9,7 @@ db.runCommand({
       bsonType: 'object',
       required: [
         'record',
+        'template',
         'name',
         'category',
         'location',
@@ -20,6 +21,10 @@ db.runCommand({
         record: {
           bsonType: 'objectId',
           description: 'Reference to the record this file belongs to'
+        },
+        template: {
+          bsonType: 'objectId',
+          description: 'Reference the template this file follows'
         },
         name: {
           bsonType: 'string',
@@ -38,7 +43,7 @@ db.runCommand({
           description: 'must be a number and is required'
         },
         created_at: {
-          bsonType: 'string',
+          bsonType: 'date',
           description: 'must be a string and is required'
         },
         metadata: {
@@ -53,7 +58,7 @@ db.runCommand({
               },
               type: {
                 bsonType: 'string',
-                enum: ['SHORT_TEXT', 'TEXT', 'DATE', 'NUMBER', 'FLOAT'],
+                enum: ['SHORT_TEXT', 'TEXT', 'DATE', 'NUMBER', 'FLOAT', 'CHOICE'],
                 description:
                   'Type of data that will be stored on this property (string, date...)'
               },

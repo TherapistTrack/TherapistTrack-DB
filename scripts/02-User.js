@@ -10,9 +10,10 @@ db.runCommand({
       required: [
         'names',
         'lastNames',
+        'mails',
         'phones',
         'rol',
-        'roleDependentInfo'
+        'isActive'
       ],
       properties: {
         names: {
@@ -41,9 +42,13 @@ db.runCommand({
           bsonType: 'string',
           description: "User's Rol on app"
         },
-        roleDependentInfo: {
+        rolDependentInfo : {
           bsonType: 'objectId',
-          description: "Reference to user's info dependent of the role"
+          description: 'id of rol data info'
+        },
+        isActive: {
+          bsonType: 'bool',
+          description: "Is the user still usable?"
         }
       }
     }

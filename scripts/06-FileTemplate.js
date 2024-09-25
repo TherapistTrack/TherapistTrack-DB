@@ -7,17 +7,11 @@ db.runCommand({
   validator: {
     $jsonSchema: {
       bsonType: 'object',
-      required: ['doctor','categories', 'lastUpdate', 'metadata'],
+      required: ['doctor', 'lastUpdate', 'metadata'],
       properties: {
         doctor: {
           bsonType: 'objectId',
           description: 'Doctor that owns the template'
-        },
-        categories: {
-          bsonType: 'array',
-          items: {
-            bsonType: 'string'
-          }
         },
         lastUpdate: {
           bsonType: 'date',
