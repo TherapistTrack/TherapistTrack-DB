@@ -119,7 +119,7 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
     doctor : ObjectId("asdfwk32?932l")
     lastUpdated: "2023-1-2",
     name: "Plantilla2024",
-    metadata: [
+    fields: [
         {
             name: "Difficulty",
             type: "CHOICE",
@@ -154,7 +154,7 @@ Below is a a list of examples of the JSON that is expected to be stored in each 
     location: "./route/to/file/in/disk.pdf",
     pages: 3
     created_at: "2023-1-2"
-    metadata: [
+    fields: [
         {
             name: "Difficulty",
             type: "CHOICE",
