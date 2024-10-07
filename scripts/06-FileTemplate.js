@@ -21,7 +21,7 @@ db.runCommand({
           bsonType: 'string',
           description: 'Template name'
         },
-        metadata: {
+        fields: {
           bsonType: 'array',
           description: 'Fields that a patient most have.',
           items: {

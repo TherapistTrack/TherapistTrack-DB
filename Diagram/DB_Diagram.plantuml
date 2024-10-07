@@ -60,7 +60,7 @@ entity FileTemplate {
     * doctor : <<Doctor>>
     * lastUpdate: date
     * name: string
-    * metadata: array[object]
+    * fields: array[object]
     [
         \t•name: string
         \t•type: category
@@ -78,7 +78,7 @@ entity File {
     * location : string
     * pages : number
     * created_at : date
-    * metadata: array[object]
+    * fields: array[object]
     [
         \t•name: string
         \t•type: category
