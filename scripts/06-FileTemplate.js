@@ -3,11 +3,11 @@ db = db.getSiblingDB(process.env.DB_NAME)
 db.createCollection('FileTemplate')
 
 db.runCommand({
-  collMod: 'FileTemplate',
+  collMod: 'PatientTemplate',
   validator: {
     $jsonSchema: {
       bsonType: 'object',
-      required: ['doctor', 'lastUpdate', 'name', 'fields'],
+      required: ['doctor', 'lastUpdate', 'fields'],
       properties: {
         doctor: {
           bsonType: 'objectId',
