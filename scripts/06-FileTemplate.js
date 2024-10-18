@@ -3,7 +3,7 @@ db = db.getSiblingDB(process.env.DB_NAME)
 db.createCollection('FileTemplate')
 
 db.runCommand({
-  collMod: 'PatientTemplate',
+  collMod: 'FileTemplate',
   validator: {
     $jsonSchema: {
       bsonType: 'object',
